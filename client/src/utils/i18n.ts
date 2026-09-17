@@ -17,7 +17,7 @@ export type Language =
   | 'mizo'; // Mizo
 
 const englishKeys = {
-  systemTitle: 'FloodGuard',
+  systemTitle: 'FloodResQ',
   subtitle: 'Himalayan Flash Flood, Landslide & Disaster Risk Platform',
   navHome: 'Home',
   navDashboard: 'Live Risk Map',

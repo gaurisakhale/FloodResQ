@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
         <div>
           <div className="flex items-center gap-2 text-slate-900 font-bold text-sm mb-2">
             <Shield className="w-4 h-4 text-red-600" />
-            <span>FloodGuard National Division</span>
+            <span>FloodResQ National Division</span>
           </div>
           <p className="text-slate-500 text-xs leading-relaxed">
             Multi-Source Flash Flood Prediction, CWC River Registry & Satellite Emergency Rescue System for Hilly and River Catchment regions.
@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
             Equipped with low-bandwidth compressed binary packet SOS relay (Iridium / Skylo satellite compatible).
           </p>
           <div className="text-[11px] text-slate-400">
-            © 2026 FloodGuard Platform. Life Safety System.
+            © 2026 FloodResQ Platform. Life Safety System.
           </div>
         </div>
       </div>

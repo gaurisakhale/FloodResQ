@@ -1,22 +1,8 @@
-# FloodGuard — Himalayan & Hill Region Disaster Management Platform
+# FloodResQ — Himalayan & Hill Region Disaster Management Platform
 
-**FloodGuard** is an integrated Flash Flood, Landslide, InSAR, Avalanche, Weather Risk Monitoring, Emergency Rescue, First Aid Request, and Digital Disaster Training platform designed for hilly and Himalayan regions of India (Uttarakhand, Himachal Pradesh, Sikkim, Assam, Jammu & Kashmir, Ladakh, Arunachal Pradesh, Meghalaya, Nagaland, Manipur, Mizoram, Tripura).
+**FloodResQ** is an integrated Flash Flood, Landslide, InSAR, Avalanche, Weather Risk Monitoring, Emergency Rescue, First Aid Request, and Digital Disaster Training platform designed for hilly and Himalayan regions of India (Uttarakhand, Himachal Pradesh, Sikkim, Assam, Jammu & Kashmir, Ladakh, Arunachal Pradesh, Meghalaya, Nagaland, Manipur, Mizoram, Tripura).
 
 The platform serves **Citizens**, **Rescue Taskforce Teams**, **Government Officials (CWC / NDMA)**, and **System Administrators**.
-
----
-
-## 👥 Contributors
-
-Thanks to all the amazing team members who built **FloodGuard**! 🚀
-
-| Avatar | Contributor | GitHub Profile | Key Contributions |
-| :---: | :--- | :--- | :--- |
-| <img src="https://github.com/gaurisakhale.png" width="60" height="60" style="border-radius:50%"/> | **Gauri Sakhale** | [@gaurisakhale](https://github.com/gaurisakhale) | Project Lead · Flash Flood Risk Engine · CWC River Threshold Registry · Government Dashboard · GitHub Repository Owner |
-| <img src="https://github.com/SwatiKharat93.png" width="60" height="60" style="border-radius:50%"/> | **Swati Kharat** | [@SwatiKharat93](https://github.com/SwatiKharat93) | Backend API Architecture · Emergency Comms Satellite Adapter · SOS Tracker · Rescue Console Workflow Engine |
-| <img src="https://github.com/anushkajadhav1776-boo.png" width="60" height="60" style="border-radius:50%"/> | **Anushka Jadhav** | [@anushkajadhav1776-boo](https://github.com/anushkajadhav1776-boo) | UI/UX Design · Hill Dashboard · Soil Saturation Monitoring · Avalanche Radar · Multi-Language (i18n) Support |
-| <img src="https://github.com/anjalihere26.png" width="60" height="60" style="border-radius:50%"/> | **Anjali** | [@anjalihere26](https://github.com/anjalihere26) | AI Landslide Early Warning Engine · InSAR Ground Displacement Module · GIS Multi-Layer Hazard Map · Weather Forecasting |
-
 
 ---
 

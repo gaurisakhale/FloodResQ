@@ -1,65 +1,96 @@
-# FloodGuard – Flash Flood Prediction & Satellite Rescue System
+# FloodGuard — Himalayan & Hill Region Disaster Management Platform
 
-**FloodGuard** is a disaster-management platform engineered to predict flash floods in hilly and river catchments (inspired by real Himalayan and Indian river basin scenarios) and coordinate real-time satellite emergency rescues for stranded citizens.
+**FloodGuard** is an integrated Flash Flood, Landslide, InSAR, Avalanche, Weather Risk Monitoring, Emergency Rescue, First Aid Request, and Digital Disaster Training platform designed for hilly and Himalayan regions of India (Uttarakhand, Himachal Pradesh, Sikkim, Assam, Jammu & Kashmir, Ladakh, Arunachal Pradesh, Meghalaya, Nagaland, Manipur, Mizoram, Tripura).
 
----
-
-## 🌟 Key Features & Modules
-
-1. **Per-River CWC Threshold Registry & Extended Risk Engine**:
-   - Seeded with 28+ real Indian rivers (Ganga, Yamuna, Brahmaputra, Godavari, Krishna, Kaveri, Narmada, Tapi, Mahanadi, Indus, Sutlej, Beas, Ravi, Chenab, Jhelum, Sabarmati, Periyar, Tungabhadra, Damodar, Kosi, Gandak, Ghaghara, Son, Chambal, Betwa, Alaknanda, Bhagirathi, Teesta).
-   - Modeled on Central Water Commission (CWC) classification concepts with derived `normalLevelM`, `warningLevelM`, `dangerLevelM`, and `extremeLevelM` gauge thresholds based on channel depth, width, and catchment geometry (*ILLUSTRATIVE DEMO VALUES*).
-   - Extended Risk Engine formula incorporates a per-river threshold breach factor ($F_{\text{threshold}}$).
-
-2. **Auto Danger Indication & SMS Alert Adapter Stub**:
-   - Automated event trigger when river levels cross danger or extreme marks.
-   - `server/src/adapters/smsAdapter.ts`: STUB adapter for MSG91 / Twilio / NDMA alert gateway. Logs simulated SMS broadcasts to at-risk residents within catchment radius and surfaces logs in `/admin`.
-   - Extreme threshold breaches automatically create priority-sorted incident tickets in `/rescue-console`.
-
-3. **Login & Role-Based Access Control (RBAC)**:
-   - Login Portal (`/login`) supporting roles:
-     - **Public / Citizen**: Access to `/dashboard`, `/sos`, `/alerts`.
-     - **Rescue Team**: Adds `/rescue-console` (can assign taskforce, update lifecycle `EN_ROUTE` → `ON_SITE` → `EVACUATING` → `COMPLETED`, send comms).
-     - **Government Authority**: Read-only access to `/rescue-console`, `/admin` analytics, and `/data-methodology`.
-     - **Admin**: Full access including CWC threshold editing, sensor configs, manual override broadcasts, and editing `/data-methodology` content.
-   - Server-side JWT authentication middleware (`server/src/middleware/authMiddleware.ts`).
-
-4. **Government Data & Methodology Specification (`/data-methodology`)**:
-   - Official portal for government & rescue officials documenting formula weightings, CWC threshold models, and adapter data provenance. Editable by Admin.
-
-5. **Live River-Linked Map & Actionable SOS Red Dots**:
-   - River selector dropdown re-centers map and displays live gauge readouts vs CWC bands in Recharts popups.
-   - Distinct pulsing red dot markers for active SOS distress signals.
-   - Actionable status advance: Rescue Team and Admin can advance SOS status directly from the map popup, syncing state across WebSockets.
+The platform serves **Citizens**, **Rescue Taskforce Teams**, **Government Officials (CWC / NDMA)**, and **System Administrators**.
 
 ---
 
-## 🚀 Quick Start & Running Locally
+## 🚀 Quick Start & Local Access
 
-### Prerequisites
-- Node.js (v18+)
-- npm or yarn
-
-### Environment Variables (Optional)
-- `JWT_SECRET`: Secret key for JWT signing (default: `floodguard-himalayan-secret-key-2026`)
-- `SMS_PROVIDER_STUB`: Name of simulated SMS provider stub
-
-### Installation & Launching
+- **Frontend Application**: `http://localhost:3000`
+- **Backend API & WebSockets**: `http://localhost:5000`
+- **GitHub Repository**: [https://github.com/gaurisakhale/FloodResQ](https://github.com/gaurisakhale/FloodResQ)
 
 ```bash
-# 1. Install dependencies for Server & Client
-cd server && npm install
-cd ../client && npm install
+# 1. Install dependencies for Client & Server
+cd client && npm install
+cd ../server && npm install
 cd ..
 
-# 2. Run Server (Terminal 1)
+# 2. Run Backend Server (Terminal 1)
 npm run dev:server
 
-# 3. Run Frontend Client (Terminal 2)
+# 3. Run Frontend Application (Terminal 2)
 npm run dev:client
 ```
 
-Open `http://localhost:3000` in your browser.
+---
+
+## 🔑 Prototype Authentication Credentials
+
+> [!IMPORTANT]
+> **Prototype Credentials**:
+> - **Username**: `Flash Flood`
+> - **Password**: `123456789`
+> - **Error Message on Failure**: `"Access Denied. Invalid username or password."`
+
+Centralized authentication (`server/src/routes/auth.ts` & `client/src/pages/Login.tsx`) enforces security without scattering credentials across frontend components. Public citizens can view risk maps, access safety training, submit emergency First Aid SOS requests, and track SOS status **without administrative login or exposing citizen PII**.
+
+---
+
+## 📊 Core Disaster Management Modules
+
+### 1. Hilly Area Disaster Risk Dashboard (`/hill-dashboard`)
+Monitors 8 core risk metrics: Flash Flood, Landslide, Avalanche, Rainfall, Soil Saturation, Weather, River/Stream, and Overall Regional Risk across 12 Hill States/UTs using standardized textual levels (**LOW**, **MODERATE**, **HIGH**, **VERY HIGH**, **CRITICAL**) alongside visual indicators.
+
+### 2. Soil Saturation Monitoring (`/soil-saturation`)
+Real-time soil saturation %, estimated water retention, slope risk, landslide correlation, configurable regional saturation bands (0–30% LOW to 86–100% CRITICAL), 24-hour Recharts history line chart, and critical warning alerts.
+
+### 3. InSAR-Based Landslide Monitoring (`/insar`)
+Tracks Synthetic Aperture Radar (Sentinel-1 / NISAR) ground displacement velocity (mm/year) across unstable slopes. Features an interactive Leaflet slope map and swappable satellite API adapter.
+
+### 4. AI-Based Landslide Early Warning (`/landslide`)
+Multi-factor early warning combining soil saturation, rainfall intensity, 7-day cumulative rainfall, ground displacement, slope angle, soil geology, elevation, temperature, and historical landslide records into a **0–100 Landslide Risk Score** with explicit contributing factors.
+
+### 5. Avalanche Monitoring Radar (`/avalanche`)
+Alpine snowpack accumulation, temperature, wind velocity/direction, 24h snowfall, snowpack stability layers, and **EXTREME** risk indicators.
+
+### 6. AI + Weather Forecasting (`/weather`)
+Live weather telemetry, 3h–24h rainfall forecasts, thunderstorm probability, extreme rainfall warnings, and explainable flash flood risk score.
+
+### 7. Multi-Layer GIS Hazard Map (`/hazard-map`)
+Interactive Leaflet GIS map with **13 toggleable hazard layers** (Flash Flood, Landslide, Soil Saturation, InSAR Movement, Avalanche, Rainfall, Rivers, Rescue Centers, Shelters, Hospitals, First Aid Points, Safe Zones, Evacuation Routes) and regional risk inspector modal.
+
+### 8. Emergency First Aid SOS & Satellite Comms Adapter (`/first-aid-sos`)
+Citizen emergency First Aid request form with **"Use My Current Location"** GPS locator, headcount, injury details, **Haversine nearest rescue branch distance calculation**, and offline `localStorage` fallback. Features honest SatCom feedback (*"SOS recorded successfully. Satellite transmission is not configured in this deployment."*).
+
+### 9. SOS Tracker (`/sos-tracker`)
+Public status tracking view allowing citizens to enter their Request ID to view live operational progress (`NEW` → `ACKNOWLEDGED` → `TEAM_ASSIGNED` → `DISPATCHED` → `EN_ROUTE` → `REACHED_LOCATION` → `ASSISTANCE_PROVIDED` → `CLOSED`).
+
+### 10. Rescue Console (`/rescue-console`) & First Aid Management (`/first-aid-management`)
+Priority-sorted dispatch queue, 8-stage operational workflow, live comms log, and internal branch stock inventory tracking.
+
+### 11. Digital Disaster Training (`/training` & `/training-admin`)
+Government-verified educational videos categorized by hill safety protocols, filter controls, video player modal, and admin resource curation.
+
+### 12. Multi-Language Support (i18n) (`client/src/utils/i18n.ts`)
+Supports 16+ Indian regional and Himalayan languages (English, Hindi, Nepali, Bengali, Assamese, Gujarati, Kannada, Malayalam, Marathi, Odia, Punjabi, Tamil, Telugu, Urdu, Manipuri, Mizo) with local preference saving.
+
+### 13. Government Dashboard (`/government-dashboard`), Admin Console (`/admin`), & Diagnostics (`/integration-status`)
+Executive multi-state operational dashboard, CWC per-river threshold registry management, emergency manual broadcast override, and real-time external adapter integration diagnostics.
+
+---
+
+## ⚙️ Modular Backend Integration Adapters
+
+| Adapter / Service | File Path | Status / Config Variable |
+| :--- | :--- | :--- |
+| **EmergencyCommsService** | `server/src/services/emergencyCommsService.ts` | `SATELLITE_SOS_API_KEY`, `MSG91_API_KEY` |
+| **WeatherService** | `server/src/services/weatherForecastService.ts` | `OPENWEATHER_API_KEY` |
+| **InSARService** | `server/src/services/inSARService.ts` | `INSAR_API_KEY` |
+| **AvalancheService** | `server/src/services/avalancheService.ts` | `AVALANCHE_RADAR_ENDPOINT` |
+| **RescueCenterService** | `server/src/services/rescueCenterService.ts` | Internal Haversine Engine |
 
 ---
 
@@ -76,16 +107,8 @@ $$\text{RiskScore} = 0.30 \cdot F_{\text{rain}} + 0.25 \cdot F_{\text{rise}} + 0
 - $F_{\text{soil}} = S / 100.0$
 - $F_{\text{dem}} = \min(1.0, (G / 45.0) \cdot V_n)$
 
-### Risk Level Categorization
-- `0.00 - 0.31` → **LOW** (Emerald)
-- `0.32 - 0.54` → **MODERATE** (Amber)
-- `0.55 - 0.74` → **HIGH** (Orange)
-- `0.75 - 1.00` → **SEVERE** (Red Alert)
-
 ---
 
-## 👥 Team & Connected Repositories
+## 📜 License & Operational Disclaimer
 
-- **Primary Repository**: [Samadhan054/SIH-Demo](https://github.com/Samadhan054/SIH-Demo.git)
-- **Team Repository**: [anushkajadhav1776-boo/SIH-demo](https://github.com/anushkajadhav1776-boo/SIH-demo.git)
-- **Team Contributor**: [NileshBojware](https://github.com/NileshBojware)
+This platform supports disaster awareness and emergency coordination. AI-generated or model-based risk estimates are advisory and should not replace official warnings from government disaster-management (NDMA/SDMA), meteorological (IMD), geological (GSI), or emergency-response authorities. In an emergency, follow instructions issued by authorized local agencies.

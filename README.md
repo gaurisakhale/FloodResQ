@@ -6,6 +6,22 @@ The platform serves **Citizens**, **Rescue Taskforce Teams**, **Government Offic
 
 ---
 
+## 🖼️ Interface Prototype Screenshots
+
+### 1. Hilly Area Disaster Risk & Flash Flood Dashboard
+![Hilly Area Disaster Risk Dashboard](docs/images/hill_risk_dashboard.png)
+
+### 2. Multi-Layer GIS Hazard Map & Regional Inspector
+![Multi-Layer GIS Hazard Map](docs/images/gis_hazard_map.png)
+
+### 3. Soil Saturation Monitoring & Historical Trend Chart
+![Soil Saturation Trend Chart](docs/images/soil_saturation_chart.png)
+
+### 4. Emergency Rescue Taskforce Console & First Aid SOS
+![Rescue Taskforce Console](docs/images/rescue_console_ui.png)
+
+---
+
 ## 🚀 Quick Start & Local Access
 
 - **Frontend Application**: `http://localhost:3000`

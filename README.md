@@ -6,19 +6,31 @@ The platform serves **Citizens**, **Rescue Taskforce Teams**, **Government Offic
 
 ---
 
-## 🖼️ Interface Prototype Screenshots
+## 📸 Real Website Live Screenshots (Captured from Localhost)
 
-### 1. Hilly Area Disaster Risk & Flash Flood Dashboard
+### 1. Hilly Area Disaster Risk & Flash Flood Dashboard (`/hill-dashboard`)
 ![Hilly Area Disaster Risk Dashboard](docs/images/hill_risk_dashboard.png)
 
-### 2. Multi-Layer GIS Hazard Map & Regional Inspector
+### 2. Soil Saturation Gauge, Configurable Bands & Trend Chart (`/soil-saturation`)
+![Soil Saturation Monitoring](docs/images/soil_saturation_chart.png)
+
+### 3. Multi-Layer GIS Hazard Map & Regional Inspector (`/hazard-map`)
 ![Multi-Layer GIS Hazard Map](docs/images/gis_hazard_map.png)
 
-### 3. Soil Saturation Monitoring & Historical Trend Chart
-![Soil Saturation Trend Chart](docs/images/soil_saturation_chart.png)
+### 4. AI-Based Landslide Early Warning Engine (`/landslide`)
+![AI Landslide Early Warning Engine](docs/images/landslide_early_warning.png)
 
-### 4. Emergency Rescue Taskforce Console & First Aid SOS
-![Rescue Taskforce Console](docs/images/rescue_console_ui.png)
+### 5. AI Weather Telemetry & Explainable Flash Flood Forecasting (`/weather`)
+![AI Weather & Flash Flood Forecast](docs/images/weather_forecast.png)
+
+### 6. Emergency First Aid SOS Request Form & GPS Locator (`/first-aid-sos`)
+![Emergency First Aid SOS Request Form](docs/images/first_aid_sos_form.png)
+
+### 7. Rescue Taskforce Console & Priority Dispatch Queue (`/rescue-console`)
+![Rescue Operations Console](docs/images/rescue_console_ui.png)
+
+### 8. Digital Disaster Training Portal & Educational Library (`/training`)
+![Digital Disaster Training Portal](docs/images/digital_disaster_training.png)
 
 ---
 

@@ -16,7 +16,7 @@ Thanks to all the amazing team members who built **FloodGuard**! 🚀
 | <img src="https://github.com/SwatiKharat93.png" width="60" height="60" style="border-radius:50%"/> | **Swati Kharat** | [@SwatiKharat93](https://github.com/SwatiKharat93) | Backend API Architecture · Emergency Comms Satellite Adapter · SOS Tracker · Rescue Console Workflow Engine |
 | <img src="https://github.com/anushkajadhav1776-boo.png" width="60" height="60" style="border-radius:50%"/> | **Anushka Jadhav** | [@anushkajadhav1776-boo](https://github.com/anushkajadhav1776-boo) | UI/UX Design · Hill Dashboard · Soil Saturation Monitoring · Avalanche Radar · Multi-Language (i18n) Support |
 | <img src="https://github.com/anjalihere26.png" width="60" height="60" style="border-radius:50%"/> | **Anjali** | [@anjalihere26](https://github.com/anjalihere26) | AI Landslide Early Warning Engine · InSAR Ground Displacement Module · GIS Multi-Layer Hazard Map · Weather Forecasting |
-| <img src="https://github.com/NileshBojware.png" width="60" height="60" style="border-radius:50%"/> | **Nilesh Bojware** | [@NileshBojware](https://github.com/NileshBojware) | First Aid SOS GPS Locator · Digital Disaster Training Portal · Inventory Management · Admin Console · Integration Diagnostics |
+
 
 ---
 
